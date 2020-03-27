@@ -27,18 +27,14 @@ class GenreCard extends Component {
   };
 
   renderGenreItem = ({item, index}) => {
-    console.log('genre', this.state.genreData[0].genreImage);
-
     return (
       // <View style={(styles.item, {backgroundColor: {color}})}>
       <View style={[styles.item, {backgroundColor: item.color}]}>
         <Text style={styles.title}>{item.name}</Text>
         <Image
-          // eslint-disable-next-line react-native/no-inline-styles
-          style={{width: 130, height: 80, backgroundColor: 'grey'}}
+          style={[styles.genreImage]}
           source={{
-            uri:
-              'https://cdn.clipart.email/215a089f47fede68ce55f7fceeebe8ff_download-wizard-free-png-photo-images-and-clipart-freepngimg_1855-2177.png',
+            uri: item.genreImage,
           }}
         />
       </View>
@@ -84,8 +80,9 @@ const styles = StyleSheet.create({
     color: '#fff',
   },
   genreImage: {
-    width: 66,
-    height: 58,
+    width: 130,
+    height: 130,
+    resizeMode: 'contain',
   },
 });
 

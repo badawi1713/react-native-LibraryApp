@@ -28,13 +28,10 @@ class BookCard extends Component {
   };
 
   renderBookItem = ({item, index}) => {
-    // console.log('image', this.state.genreData[0].genreImage);
-
     return (
-      // <View style={(styles.item, {backgroundColor: {color}})}>
       <View>
         <View style={[styles.photoContainer]}>
-          <Image source={{uri: item.imageURL}} />
+          <Image style={styles.photoImage} source={{uri: item.imageURL}} />
         </View>
         <View style={styles.infoTextContainer}>
           <Text ellipsizeMode="tail" numberOfLines={1} style={styles.title}>
@@ -76,6 +73,11 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
 
     backgroundColor: 'red',
+  },
+  photoImage: {
+    width: 160,
+    height: 200,
+    borderRadius: 10,
   },
   infoTextContainer: {
     // backgroundColor: 'yellow',
