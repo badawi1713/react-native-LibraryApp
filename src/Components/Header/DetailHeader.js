@@ -30,8 +30,9 @@ const DetailHeader = props => {
 
 const styles = StyleSheet.create({
   iconContainer: {
-    backgroundColor: 'transparent',
-    paddingTop: 20,
+    // backgroundColor: 'red',
+    paddingTop: 30,
+    paddingBottom: 30,
     paddingLeft: 30,
     zIndex: 2,
   },

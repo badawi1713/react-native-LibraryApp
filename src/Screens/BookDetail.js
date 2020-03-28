@@ -44,14 +44,6 @@ const BookDetail = props => {
     props.navigation.navigate('Home');
   };
 
-  // const renderBookDescription = () => {
-  //   return (
-  //     <View style={styles.descriptionContainer}>
-  //       <Text style={styles.descriptionText}>{bookData.description}</Text>
-  //     </View>
-  //   );
-  // };
-
   return (
     <View style={styles.container}>
       <DetailHeader data={bookData} backButton={backButtonHandler} />
@@ -61,36 +53,7 @@ const BookDetail = props => {
         vertical={true}
         automaticallyAdjustContentInsets={true}
         showsVerticalScrollIndicator={false}>
-        <Text style={styles.descriptionText}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
-          lobortis, ipsum eget malesuada condimentum, risus turpis eleifend
-          velit, in vestibulum ex dui id lorem. Aenean malesuada consectetur
-          metus, vitae vestibulum lacus finibus et. Praesent iaculis, erat sit
-          amet bibendum posuere, magna erat ullamcorper nibh, id euismod sapien
-          diam nec purus. Praesent sed facilisis nulla. Donec id metus at eros
-          pulvinar dictum. Morbi porta quam quis erat scelerisque varius. Fusce
-          pulvinar rhoncus tristique. Ut lacinia feugiat lorem nec consectetur.
-          Integer ac erat elementum, efficitur orci ut, malesuada libero.
-          Vestibulum viverra ornare est, non sollicitudin augue sagittis eu. Sed
-          ullamcorper, risus hendrerit semper condimentum, odio dolor congue
-          arcu, feugiat accumsan libero tellus vel enim. Ut lectus arcu,
-          sagittis vel aliquam sit amet, rutrum id libero. Proin blandit
-          molestie porta. Nam cursus, neque vitae dapibus rutrum, quam metus
-          porta elit, sed finibus lacus massa rhoncus augue. Suspendisse
-          potenti. Morbi quam nunc, egestas et purus eget, imperdiet pulvinar
-          ex. Sed faucibus risus vehicula ullamcorper varius. Proin est eros,
-          commodo vitae nisl ut, vestibulum finibus orci. Orci varius natoque
-          penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-          Vivamus bibendum orci mauris. Pellentesque odio mauris, pharetra
-          cursus blandit eu, feugiat vel ex. Mauris auctor sapien id feugiat
-          euismod. In feugiat consequat leo dictum viverra. Maecenas malesuada
-          justo vel consectetur cursus. Proin non orci at neque iaculis
-          tincidunt. Praesent laoreet nisi risus, suscipit mattis ex ultricies
-          sed. Sed sodales, dui vitae porttitor scelerisque, enim est gravida
-          mi, vitae malesuada nisl eros non sapien. Quisque sagittis tortor at
-          mi condimentum rhoncus. Duis convallis purus in purus eleifend
-          fermentum.
-        </Text>
+        <Text style={styles.descriptionText}>{bookData.description}</Text>
       </ScrollView>
       <View style={styles.buttonContainer}>
         <TouchableOpacity>
@@ -111,8 +74,9 @@ const styles = StyleSheet.create({
   },
   descriptionContainer: {
     // backgroundColor: 'yellow',
-    marginTop: 160,
-    // marginBottom: 100,
+    marginTop: 120,
+    marginBottom: 20,
+    paddingTop: 20,
     paddingHorizontal: 30,
   },
   descriptionText: {
