@@ -5,12 +5,12 @@ import GenreCard from '../Components/Card/GenreCard';
 import BookCard from '../Components/Card/BookCard';
 
 class Home extends Component {
-  state = {
-    bookData: [],
+  detailPageHandler = id => {
+    this.props.navigation.navigate('Detail', {id: id});
   };
 
-  detailPageHandler = id => {
-    this.props.navigation.push('Detail', {id: id});
+  booksByGenrePageHandler = id => {
+    this.props.navigation.navigate('BooksByGenre', {id: id});
   };
 
   render() {
@@ -18,7 +18,7 @@ class Home extends Component {
       <View style={styles.homeContainer}>
         <HomeHeader />
 
-        <GenreCard />
+        <GenreCard onPress={this.booksByGenrePageHandler} />
         <View style={styles.contentTitleContainer}>
           <Text style={styles.contentTitle}>Popular Books</Text>
         </View>

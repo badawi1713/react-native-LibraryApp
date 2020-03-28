@@ -6,6 +6,7 @@ import {
   FlatList,
   Text,
   StyleSheet,
+  TouchableOpacity,
 } from 'react-native';
 const URL_STRING = 'http://192.168.100.185:3001/api/v1/genres';
 import Axios from 'axios';
@@ -26,18 +27,23 @@ class GenreCard extends Component {
       .catch(err => console.log(err));
   };
 
-  renderGenreItem = ({item, index}) => {
+  renderGenreItem = ({item}) => {
     return (
       // <View style={(styles.item, {backgroundColor: {color}})}>
-      <View style={[styles.item, {backgroundColor: item.color}]}>
-        <Text style={styles.title}>{item.name}</Text>
-        <Image
-          style={[styles.genreImage]}
-          source={{
-            uri: item.genreImage,
-          }}
-        />
-      </View>
+      <TouchableOpacity
+        activeOpacity={0.6}
+        genreName={item.name}
+        onPress={() => this.props.onPress(item.id)}>
+        <View style={[styles.item, {backgroundColor: item.color}]}>
+          <Text style={styles.title}>{item.name}</Text>
+          <Image
+            style={[styles.genreImage]}
+            source={{
+              uri: item.genreImage,
+            }}
+          />
+        </View>
+      </TouchableOpacity>
     );
   };
   render() {

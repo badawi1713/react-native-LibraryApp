@@ -9,6 +9,7 @@ import History from './src/Screens/History';
 import Profile from './src/Screens/Profile';
 
 import HomeWithBottomNavbar from './src/Components/Navbar/BottomNavbar';
+import BooksByGenre from './src/Screens/BooksByGenre';
 
 const Stack = createStackNavigator();
 class Navigator extends Component {
@@ -35,6 +36,11 @@ class Navigator extends Component {
             name="Detail"
             options={{headerShown: false}}
             component={BookDetail}
+          />
+          <Stack.Screen
+            name="BooksByGenre"
+            options={{headerShown: false}}
+            component={BooksByGenre}
           />
         </Stack.Navigator>
       </NavigationContainer>

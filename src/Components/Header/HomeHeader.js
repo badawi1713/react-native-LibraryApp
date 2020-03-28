@@ -30,7 +30,13 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: 'bold',
   },
-  searchIcon: {fontSize: 18, left: 50, zIndex: 1},
+  searchIcon: {
+    // backgroundColor: 'red',
+    top: -2,
+    fontSize: 18,
+    left: 50,
+    zIndex: 1,
+  },
   searchInput: {
     width: '65%',
     paddingLeft: '15%',

@@ -13,6 +13,7 @@ class History extends Component {
         <View style={styles.historyContentContainer}>
           <View>
             <Image
+              // eslint-disable-next-line react-native/no-inline-styles
               style={{width: 300, height: 200}}
               source={require('../../assets/history_empty.png')}
             />

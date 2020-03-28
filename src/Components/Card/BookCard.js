@@ -27,7 +27,7 @@ class BookCard extends Component {
       .catch(err => console.log(err));
   };
 
-  renderBookItem = ({item, index}) => {
+  renderBookItem = ({item}) => {
     return (
       <TouchableOpacity
         activeOpacity={0.6}
