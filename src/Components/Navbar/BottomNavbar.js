@@ -7,37 +7,35 @@ import Profile from '../../Screens/Profile';
 import Icon from 'react-native-vector-icons/FontAwesome';
 const Tab = createBottomTabNavigator();
 
-const HomeNavbar = props => {
-  // const styles = StyleSheet.create({
-  //   bottomNavbar: {
-  //     color: 'black',
-  //   },
-  // });
+const HomeWithBottomNavbar = props => {
   return (
     <Tab.Navigator>
       <Tab.Screen
         options={{
-          tabBarIcon: ({tintColor}) => (
-            <Icon name="home" size={30} color={tintColor} />
-          ),
+          tabBarLabel: () => {
+            return null;
+          },
+          tabBarIcon: () => <Icon name="home" size={30} color={'#3c3c3c'} />,
         }}
         name="Home"
         component={Home}
       />
       <Tab.Screen
         options={{
-          tabBarIcon: ({tintColor}) => (
-            <Icon name="history" size={30} color={tintColor} />
-          ),
+          tabBarLabel: () => {
+            return null;
+          },
+          tabBarIcon: () => <Icon name="history" size={30} color={'#3c3c3c'} />,
         }}
         name="History"
         component={History}
       />
       <Tab.Screen
         options={{
-          tabBarIcon: ({tintColor}) => (
-            <Icon name="user" size={30} color={tintColor} />
-          ),
+          tabBarLabel: () => {
+            return null;
+          },
+          tabBarIcon: () => <Icon name="user" size={30} color={'#3c3c3c'} />,
         }}
         name="Profile"
         component={Profile}
@@ -45,4 +43,4 @@ const HomeNavbar = props => {
     </Tab.Navigator>
   );
 };
-export default HomeNavbar;
+export default HomeWithBottomNavbar;

@@ -3,7 +3,16 @@ import {View, Text, StyleSheet, Image, FlatList} from 'react-native';
 import HomeHeader from '../Components/Header/HomeHeader';
 import GenreCard from '../Components/Card/GenreCard';
 import BookCard from '../Components/Card/BookCard';
+
 class Home extends Component {
+  state = {
+    bookData: [],
+  };
+
+  detailPageHandler = id => {
+    this.props.navigation.push('Detail', {id: id});
+  };
+
   render() {
     return (
       <View style={styles.homeContainer}>
@@ -14,7 +23,7 @@ class Home extends Component {
           <Text style={styles.contentTitle}>Popular Books</Text>
         </View>
 
-        <BookCard />
+        <BookCard onPress={this.detailPageHandler} />
       </View>
     );
   }

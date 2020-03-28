@@ -6,9 +6,9 @@ import {
   FlatList,
   Text,
   StyleSheet,
+  TouchableOpacity,
 } from 'react-native';
 
-const URL_STRING = 'http://192.168.100.185:3001/api/v1/books';
 import Axios from 'axios';
 
 class BookCard extends Component {
@@ -16,11 +16,11 @@ class BookCard extends Component {
     bookData: [],
   };
   componentDidMount = () => {
-    this.getBookData();
+    this.getAllBookData();
   };
 
-  getBookData = () => {
-    Axios.get(URL_STRING)
+  getAllBookData = () => {
+    Axios.get('http://192.168.100.185:3001/api/v1/books')
       .then(({data}) => {
         this.setState({bookData: data.data});
       })
@@ -29,7 +29,9 @@ class BookCard extends Component {
 
   renderBookItem = ({item, index}) => {
     return (
-      <View>
+      <TouchableOpacity
+        activeOpacity={0.6}
+        onPress={() => this.props.onPress(item.id)}>
         <View style={[styles.photoContainer]}>
           <Image style={styles.photoImage} source={{uri: item.imageURL}} />
         </View>
@@ -38,7 +40,7 @@ class BookCard extends Component {
             {item.title}
           </Text>
         </View>
-      </View>
+      </TouchableOpacity>
     );
   };
 
@@ -72,7 +74,7 @@ const styles = StyleSheet.create({
     marginRight: 15,
     flexDirection: 'row',
 
-    backgroundColor: 'red',
+    backgroundColor: '#eee',
   },
   photoImage: {
     width: 160,
