@@ -12,11 +12,12 @@ import {useRoute} from '@react-navigation/native';
 import Axios from 'axios';
 import BooksByGenreHeader from '../Components/Header/BooksByGenreHeader';
 const URL_STRING = 'http://192.168.100.185:3001/api/v1/books/genre/';
+
 const BooksByGenre = props => {
   const route = useRoute();
   const genreId = route.params.id;
   console.log('id', genreId);
-  console.log('propsku', props.genreName);
+  // console.log('propsku', props.genreName);
 
   const [booksData, setBooksData] = useState([]);
 
@@ -67,7 +68,7 @@ const BooksByGenre = props => {
 
   return (
     <View style={styles.container}>
-      <BooksByGenreHeader onPress={backButtonHandler} />
+      <BooksByGenreHeader data={booksData[0]} onPress={backButtonHandler} />
       {/* <Text>{props.genreName}</Text> */}
       <FlatList
         numColumns={2}

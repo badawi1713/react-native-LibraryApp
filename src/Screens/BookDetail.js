@@ -83,7 +83,7 @@ const styles = StyleSheet.create({
     fontWeight: '600',
   },
   buttonContainer: {
-    paddingVertical: 10,
+    marginBottom: 20,
   },
   rentBook: {
     fontSize: 20,

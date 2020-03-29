@@ -4,6 +4,9 @@ import HomeHeader from '../Components/Header/HomeHeader';
 import GenreCard from '../Components/Card/GenreCard';
 import BookCard from '../Components/Card/BookCard';
 
+import {connect} from 'react-redux';
+import {getAllBook} from '../Redux/Actions/books';
+
 class Home extends Component {
   detailPageHandler = id => {
     this.props.navigation.navigate('Detail', {id: id});
